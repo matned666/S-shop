@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login death user :D</title>
+</head>
+<body>
+
+<div>
+
+    <table class="table action-panel table-bordered" cellspacing="1">
+        <thread>
+            <tr>
+                <h1>Users in hell:</h1>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Death date</th>
+            </tr>
+        </thread>
+        <tbody>
+        <th:block th:each="user : ${users}">
+
+        <tr>
+            <th th:text="${user.name}"></th>
+            <th th:text="${user.surname}"></th>
+            <th th:text="${user.addDate}"></th>
+        </tr>
+        </th:block>
+        </tbody>
+    </table>
+    <input type="button" href="/index">
+
+</div>
+
+</body>
+</html>

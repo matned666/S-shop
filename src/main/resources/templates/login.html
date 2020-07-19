@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns = "http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login death user :D</title>
+</head>
+
+<body>
+<div class="container">
+    <form class="from-signin" th:action="@{/login-process}" method="post">
+        <p class="alert alert-danger" th:if="${param.error}">
+            Given login and user is unexpected, must be still alive</p>
+        <h1 class="h3 mb-3 front-weight-normal">Login undead</h1>
+        <label for="inputEmail" class="sr-only-focusable">Write your email when you were alive:</label>
+        <input type="email" id="inputEmail" class="form-control"
+               name="username"  value="" placeholder="Email" th:required="required">
+        <label for="inputPass" class="sr-only-focusable">Write your password:</label>
+        <input type="password" id="inputPass" class="form-control"
+               name="password" value="" placeholder="Password" th:required="required">
+        <button class="btn btn-log btn-primary btn-block" type="submit" >Log into void</button>
+    </form>
+</div>
+
+</body>
+</html>

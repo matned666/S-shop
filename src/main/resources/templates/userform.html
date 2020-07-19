@@ -1,0 +1,29 @@
+<html
+        xmlns = "http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mały sklep internetowy user</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css"
+          th="">
+</head>
+
+<body>
+<h1>
+    Insert new dead user:
+</h1>
+<form action="#" th:action="@{/add}" th:object="${userToInsert}"
+      method="post">
+    <p>Name: <input type="text" th:field="*{name}"></p>
+    <p>Surname: <input type="text" th:field="*{surname}"></p>
+    <p><input type="submit" value="Add"></p>
+    <p><input type="reset" value="Cancel"></p>
+</form>
+</body>
+</html>

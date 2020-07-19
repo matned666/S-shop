@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Hell panalties</title>
+</head>
+<body>
+
+<div>
+
+    <table class="table action-panel table-bordered" cellspacing="0">
+        <thread>
+            <tr>
+                <h1>Penalties for dead users in hell</h1>
+            </tr>
+
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>Add date</td>
+            </tr>
+
+        </thread>
+        <tbody class="regular-table">
+        <tr th:each="prod:${products}">
+            <form action="/deleteProduct" th:object="${prod}" method="post">
+                <td th:text="${prod.id}"></td>
+                <td th:text="${prod.name}"></td>
+                <td th:text="${prod.price}"></td>
+                <td th:text="${prod.quantity}"></td>
+                <td th:text="${prod.addDate}"></td>
+                <td>
+                    <input type="hidden" name="prodid" th:value="${prod.id}"/>
+                    <button class="btn btn-success" type="submit" value="su">Usuń</button>
+                </td>
+            </form>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+</body>
+</html>

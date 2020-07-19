@@ -1,0 +1,33 @@
+<html
+        xmlns = "http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Mały sklep internetowy</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css"
+          th="">
+</head>
+
+<body>
+<h1 class="">Little dead shopping store</h1>
+<form  action = "/search">
+    <button class="btn btn-danger btn-block" value="Search users">Search for user in hell</button>
+</form>
+<div  th:if="${#httpServletRequest.isUserInRole('ROLE_DEATH')}">
+<form  action="/add">
+    <button class="btn btn-danger btn-block" value="Add user">Add user to hell</button>
+</form>
+</div>
+<form  action="/searchProds">
+    <button class="btn btn-danger btn-block" value="Search prods">Search penalties in hell</button>
+</form>
+<div  th:if="${#httpServletRequest.isUserInRole('ROLE_DEATH')}">
+<form  action="/addProduct">
+    <button class="btn btn-danger btn-block" value="Add prods">Add penalty to hell</button>
+</form>
+</div>
+</body>
+</html>
